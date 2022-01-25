@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=	, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="main.js"></script>
+    <title>test gezeik</title>
+    
 </head>
 <body>
-    
+    <a-scene physics="debug: true">
+        <a-camera static-body id="camera">
+            <a-cursor color="gold"></a-cursor>
+        </a-camera>
+        <a-plane static-body id="vloer" height="10" width="10" color="grey" rotation="-90 0 0"></a-plane>
+        <a-box dynamic-body id="object" position="0 3 -1s" color="red" spring="target: #camera; damping: 0.10; stiffness: 150;"></a-box>
+    </a-scene>
 </body>
 </html>
