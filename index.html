@@ -16,7 +16,9 @@
         <a-entity class="el"sphere="" position="-1 9 9"></a-entity>
         <a-entity class="box"box="" position="4 1 -7"></a-entity>
         <a-entity class="box_red"box_event="" position="-3 1 -7"></a-entity>
-        <a-camera id="camera" wasd-controls-enabled="false">
+        <a-camera id="camera" wasd-controls-enabled="">
+              <a-text position="-0.5 0.2 -0.3" value="-Find the bag" color="black" scale="0.1 0.1 0.1"></a-text>
+            <a-text class="plan" scale="3 3 3"position="0 2.5 -2" color="black" value="hi"rotation="0 0 0"></a-text>
             <a-entity
                 animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
                 animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1"
@@ -39,7 +41,7 @@
         <a-entity class="el" text="hoi" position="0 3 -3"></a-entity>
 
         <a-sky color="skyblue"></a-sky>
-        <a-text class="plan" scale="3 3 3"position="1 7 9" color="black" value=""rotation="30 180 0"></a-text>
+        <!-- <a-text class="plan" scale="3 3 3"position="0 2.5 -2" color="black" value="hi"rotation="0 0 0"></a-text> -->
 
     </a-scene>
 </body>
