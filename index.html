@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="JS/main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <title>Strandje</title>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <asset-item id="strand-obj" src="models/strand.obj"></asset-item>
+            <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
+            <img id="sky" src="models/sky.jpg">
+        </a-assets>
+
+        <a-entity obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
+        <a-circle rotation="-90 0 0 " scale="5 5 5 " color="#f5d376 "></a-circle>
+        <a-ocean width="200 " depth="200 " density="40 " opacity="1 " position="0 -0.7 0 "></a-ocean>
+        <a-sky src="#sky" position="0 100 0 "></a-sky>
+    </a-scene>
+</body>
+
+</html>
