@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="main.js" defer></script>
     <title>Strandje</title>
 </head>
 
@@ -17,16 +18,27 @@
             <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
             <asset-item id="vent-obj" src="models/vent.obj"></asset-item>
             <asset-item id="vent-mtl" src="models/vent.mtl"></asset-item>
-            <a-asset-item id="steen" src="models/steen.gltf"></a-asset-item>
+            <asset-item id="romp-obj" src="models/romp.obj"></asset-item>
+            <asset-item id="romp-mtl" src="models/romp.mtl"></asset-item>
+            <asset-item id="drukhand-obj" src="models/handjesdruk.obj"></asset-item>
+            <asset-item id="drukhand-mtl" src="models/handjesdruk.mtl"></asset-item>
             <img id="sky" src="models/sky.jpg">
         </a-assets>
 
         <a-camera id="camera">
             <a-cursor class="js--cursor" color="black"></a-cursor>
+            <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat" raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play, .starter">
+            </a-entity>
         </a-camera>
-        <a-entity gltf-model="#steen"></a-entity>
         <a-entity obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
-        <a-entity obj-model="obj: #vent-obj; mtl: #vent-mtl" position="-3 0.1 0" scale="0.7 0.7 0.7" rotation="0 30 0"></a-entity>
+        <a-sphere id="start" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="green" opacity="0.5">
+            <a-entity id="handjes" obj-model="obj: #drukhand-obj; mtl: #drukhand-mtl" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
+            <a-entity obj-model="obj: #vent-obj; mtl: #vent-mtl" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0">
+                <a-entity id="patient" obj-model="obj: #romp-obj; mtl: #romp-mtl" position="-0.2 0.05 4" rotation=" -85 0 0"></a-entity>
+            </a-entity>
+        </a-sphere>
+
         <a-circle rotation="-90 0 0 " scale="5 5 5 " color="#f5d376 "></a-circle>
         <a-ocean width="200 " depth="200 " density="40 " opacity="1 " position="0 -0.7 0 "></a-ocean>
         <a-sky src="#sky" position="0 100 0 "></a-sky>
