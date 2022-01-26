@@ -41,7 +41,7 @@ function countdown() {
 
 //oppakken blokje
 object.onclick = (event) => {
-    object.setAttribute("spring", "target: #camera; damping: 50; stiffness: 100;");
+    object.setAttribute("spring", "target: #camera; damping: 500; stiffness: 500;");
 }
 
 vloer.onclick = (event) => {
