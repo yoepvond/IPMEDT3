@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-geometry-merger-component/dist/aframe-geometry-merger-component.min.js"></script>
     <script src="main.js" defer></script>
     <title>Strandje</title>
 </head>
@@ -22,6 +23,8 @@
             <asset-item id="romp-mtl" src="models/romp.mtl"></asset-item>
             <asset-item id="drukhand-obj" src="models/handjesdruk.obj"></asset-item>
             <asset-item id="drukhand-mtl" src="models/handjesdruk.mtl"></asset-item>
+            <asset-item id="aed-obj" src="models/aed.obj"></asset-item>
+            <asset-item id="aed-mtl" src="models/aed.mtl"></asset-item>
             <img id="sky" src="models/sky.jpg">
         </a-assets>
 
@@ -32,8 +35,9 @@
             </a-entity>
         </a-camera>
         <a-entity obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
-        <a-sphere id="start" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="green" opacity="0.5">
-            <a-entity id="handjes" obj-model="obj: #drukhand-obj; mtl: #drukhand-mtl" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
+        <a-sphere id="character" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="green" opacity="0">
+            <a-entity id="handjes" obj-model="obj: #drukhand-obj" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
+            <a-entity id="aed" obj-model="obj: #aed-obj; mtl: #aed-mtl" position="6.3 -3.5 -1.5" scale="3 3 3" rotation="0 20 0" visible="false"></a-entity>
             <a-entity obj-model="obj: #vent-obj; mtl: #vent-mtl" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0">
                 <a-entity id="patient" obj-model="obj: #romp-obj; mtl: #romp-mtl" position="-0.2 0.05 4" rotation=" -85 0 0"></a-entity>
             </a-entity>
