@@ -4,7 +4,10 @@ let world = document.getElementsByClassName("world")
 let starter = document.getElementsByClassName("starter")
 let patient = document.getElementById("patient")
 let handen = document.getElementById("handjes")
+const playerHand= document.getElementById("handD")
+const tweevingers = document.getElementById("2vinger")
 
+let stap= 1;
 
 var audioD = new Audio('soundsD/soundD.mp3');
 for (let i = 0; i < play.length; i++) {
@@ -17,11 +20,23 @@ for (let i = 0; i < play.length; i++) {
     }
 }
 
-starter[0].onclick = (event) => {
+starter[0].onclick = async (event) => {
+    if(stap==1){
+        tweevingers.setAttribute("visible", true);
+        playerHand.setAttribute("visible", false);
+        await timer(3000);
+        tweevingers.setAttribute("visible", false);
+        stap++
+    }
+    if(stap==2){
     el = handen;
     el.setAttribute("visible", true);
+    playerHand.setAttribute("visible", false);
     console.log("patient");
-    start();
+    await(start());
+    playerHand.setAttribute("visible", true);
+    el.setAttribute("visible", false);
+    }
 }
 
 const timer = ms => new Promise(res => setTimeout(res, ms));
