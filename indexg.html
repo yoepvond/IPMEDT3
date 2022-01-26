@@ -15,6 +15,8 @@
         <a-assets>
             <asset-item id="hoofd-obj" src="obj/hoofdje.obj"></asset-item>
             <asset-item id="hoofd-mtl" src="obj/hoofdje.mtl"></asset-item>
+            <asset-item id="palm-mtl" src="obj/palmboom.mtl"></asset-item>
+            <asset-item id="palm-obj" src="obj/palmboom.obj"></asset-item>
         </a-assets>
         <a-camera static-body id="camera">
             <a-cursor color="gold"></a-cursor>
@@ -22,6 +24,8 @@
 
         <a-entity obj-model="obj: #hoofd-obj; mtl:#hoofd-mtl" class="js--hoofd" position="-3 0 -2" scale="0.6 0.6 0.6" rotation="0 0 0" opacity="1" ></a-entity>
         <a-obj-model id="hoofd" src="#hoofd-obj" position= "-3 0 -2" scale= "0.6 0.6 0.6" rotation= "0 0 0" color="#FFC3A0" opacity="0.1"></a-obj-model>
+
+        <a-entity id="palm" obj-model="obj: #palm-obj; mtl: #palm-mtl" position="3 0 -2" scale="0.5 0.6 0.5" rotation="0 0 0"></a-entity>
 
         <a-plane static-body id="vloer" height="10" width="10" color="grey" rotation="-90 0 0"></a-plane>
         <a-box dynamic-body id="object" position="0 3 -1s" color="red" ></a-box>
