@@ -19,7 +19,6 @@
         <a-entity class="box" box="" position="4 1 -7"></a-entity>
         <a-entity class="box_red" box_event="" position="-3 1 -7"></a-entity>
         <a-camera id="camera" wasd-controls-enabled="false">
-<<<<<<< HEAD
             <a-text position="-0.5 0.2 -0.3" value="-Find the bag" color="black" scale="0.1 0.1 0.1"></a-text>
             <a-entity
                 animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
@@ -31,11 +30,6 @@
                 material="color: black; shader: flat"
                 raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play">
             </a-entity>   
-=======
-            <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-                cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat" raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play">
-            </a-entity>
->>>>>>> a25cd9f63d71cd1785c0c22336e919e357f9ac07
             <a-cursor id="cursor" color="black"></a-cursor>
         </a-camera>
         <a-plane static-body color="darkgreen" height="25" width="25" position="0 0 -5" rotation="-90 0 0"></a-plane>
