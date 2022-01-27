@@ -17,6 +17,7 @@ function countdown() {
     if (timeLeft == -1) {
         clearTimeout(timerId)
         console.log("dood");
+        timer.setAttribute("value", "Je hebt gefaald")
     } else if (timeLeft == 300) {
         hoofd.setAttribute("color", "grey")
         timeLeft--;

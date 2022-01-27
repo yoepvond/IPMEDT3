@@ -12,9 +12,11 @@ AFRAME.registerComponent('compressie', {
         let ademhaling = document.getElementsByClassName("ademhaling")
         let info = document.getElementById("startText")
         let adem = document.getElementById("adem")
+        const text = document.getElementById("text");
 
         starter[0].onclick = async(event) => {
             if (stap == 1) {
+                text.setAttribute("value", "")
                 info.setAttribute("Value", "Check ademhaling")
                 tweevingers.setAttribute("visible", true);
                 playerHand.setAttribute("visible", false);

@@ -42,8 +42,8 @@
         </a-assets>
 
         <a-camera static-body="shape:none" id="camera">
-            <a-text id="text" position="-0.5 0.2 -0.3" value="-Find the bag" color="black" scale="0.1 0.1 0.1"></a-text>
-            <a-text id="timer" position="0.3 0.2 -0.3" value="" color="black" scale="0.1 0.1 0.1"></a-text>
+            <a-text id="text" position="-0.5 0.2 -0.3" value="Zoek de tas" color="black" scale="0.1 0.1 0.1"></a-text>
+            <a-text id="timer" position="0 0.2 -0.3" value="" color="black" scale="0.1 0.1 0.1"></a-text>
             <a-cursor class="js--cursor" color="black">
                 <a-entity id="handD" obj-model="obj: #handjes-obj; mtl: #strand-mtl" position="0 -0.9 0 " scale="0.25 0.25 0.25 rotation=" -2 90 0></a-entity>
             </a-cursor>
@@ -55,7 +55,7 @@
             <a-obj-model id="object2" class="tassie" src="#tas-obj" scale="0.01 0.01 0.01" color="darkred" visible="false"></a-obj-model>
         </a-sphere>
         <a-sphere compressie="start" id="character" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="black" opacity="0.5">
-            <a-text id="startText" value="Het slachtoffer" position="2 1.5 2" rotation="0 120 0" scale="3 3 3"></a-text>
+            <a-text id="startText" value="Het slachtoffer" position="2 1.5 2" rotation="0 120 0" scale="3 3 3" color="black"></a-text>
             <a-entity id="handjes" obj-model="obj: #drukhand-obj" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
             <a-entity id="aed" obj-model="obj: #aed-obj; mtl: #aed-mtl" position="6.3 -3.5 -1.5" scale="3 3 3" rotation="0 20 0" visible="false"></a-entity>
             <a-entity id="adem" obj-model="obj: #adem-obj; mtl: #adem-mtl" position="1 -4 0.5" scale="3 3 3" rotation="0 20 0" visible="false"></a-entity>
@@ -67,10 +67,10 @@
         <a-entity id="2vinger" obj-model="obj: #tweevinger-obj; mtl: #strand-mtl" position="-3 0.3 0.4 " scale="0.1 0.1 0.1" rotation="0 90 75" visible="false"></a-entity>
 
         <a-sphere class="aed" position="-2.7 1 1" scale="0.2 0.2 0.2" color="blue" opacity="0.5" visible="false">
-            <a-text value="Gebruik AED" position="2 2 0.5" rotation="0 120 0" scale="2 2 2"></a-text>
+            <a-text value="Gebruik AED" position="2 2 0.5" rotation="0 120 0" scale="2 2 2" color="black"></a-text>
         </a-sphere>
         <a-sphere class="drukken" position="-2.5 1 1.5" scale="0.2 0.2 0.2" color="blue" opacity="0.5" visible="false">
-            <a-text value="Compressie" position="2 2 0" rotation="0 120 0" scale="2 2 2"></a-text>
+            <a-text value="Compressie" position="2 2 0" rotation="0 120 0" scale="2 2 2" color="black"></a-text>
         </a-sphere>
 
         <a-sphere class="ademhaling" position="-2.2 1 2" scale="0.2 0.2 0.2" color="blue" opacity="0.5" visible="false">
