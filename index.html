@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="js/main.js" defer></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="js/main.js" defer></script>
 
 
     <title>Document</title>
@@ -15,33 +16,35 @@
 
 <body>
     <a-scene>
+        <a-assets>
+            <asset-item id="strand-obj" src="models/strand.obj"></asset-item>
+            <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
+            <asset-item id="palm-mtl" src="models/palmboom.mtl"></asset-item>
+            <asset-item id="palm-obj" src="models/palmboom.obj"></asset-item>
+            <img id="sky" src="models/sky.jpg"></img>
+        </a-assets>
         <a-entity class="el" sphere="" position="-1 9 9"></a-entity>
         <a-entity class="box" box="" position="4 1 -7"></a-entity>
         <a-entity class="box_red" box_event="" position="-3 1 -7"></a-entity>
         <a-camera id="camera" wasd-controls-enabled="false">
-            <a-text position="-0.5 0.2 -0.3" value="-Find the bag" color="black" scale="0.1 0.1 0.1"></a-text>
-            <a-entity
-                animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
-                animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1"
-                animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
-                cursor="fuse: true;"
-                position="0 0 -1"
-                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-                material="color: black; shader: flat"
-                raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play">
-            </a-entity>   
+            <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat" raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play">
+            </a-entity>
             <a-cursor id="cursor" color="black"></a-cursor>
         </a-camera>
-        <a-plane static-body color="darkgreen" height="25" width="25" position="0 0 -5" rotation="-90 0 0"></a-plane>
+        <a-entity id="strand" obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
+        <a-plane static-body id="vloer" position="0 0 0" rotation="-90 0 0 " scale="10 10 10 " color="#f5d376 "></a-plane>
+        <a-ocean width="200 " depth="200 " density="40 " opacity="1 " position="0 -0.7 0 "></a-ocean>
+        <a-entity obj-model="obj: #palm-obj; mtl: #palm-mtl" position="3 0 -5 " scale="0.8 0.8 0.8" rotation="0 180 0"></a-entity>
+        <a-entity obj-model="obj: #palm-obj; mtl: #palm-mtl" position="-4 0 6 " scale="0.8 0.8 0.8" rotation="0 90 0"></a-entity>
+        <a-entity obj-model="obj: #palm-obj; mtl: #palm-mtl" position="-2 0 -8 " scale="0.8 0.8 0.8" rotation="0 100 0"></a-entity>
+        <a-sky src="#sky" position="0 100 0 "></a-sky>
 
         <a-plane id="plays" class="play" text="value: PLAY; align: center;width:10; color: white" position="0 2.5 -3" color="grey" width="2.5" height="1.5" animation="property: position; to: 0 2.75 -3; dir: alternate; loop: true; dur: 8000; easing: easeInOutQuad;"></a-plane>
         <a-plane id="" class="play" rotation="0 -30 0" text="value: EXIT; align: center;width:10; color: white" position="3 2.5 -2.3" color="grey" width="2.5" height="1.5" animation="property: position; to: 3 2.75 -2.3; dir: alternate; loop: true; dur: 8000; easing: easeInOutQuad;"></a-plane>
         <a-plane id="" class="play" rotation="0 30 0" text="value: Settings; align: center;width:10; color: white" position="-3 2.5 -2.3" color="grey" width="2.5" height="1.5" animation="property: position; to: -3 2.75 -2.3; dir: alternate; loop: true; dur: 8000; easing: easeInOutQuad;"></a-plane>
 
-
         <a-entity class="el" text="hoi" position="0 3 -3"></a-entity>
-
-        <a-sky color="skyblue"></a-sky>
         <a-text class="plan" scale="3 3 3" position="1 7 9" color="black" value="" rotation="30 180 0"></a-text>
 
     </a-scene>

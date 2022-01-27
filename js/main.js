@@ -4,10 +4,10 @@ let world = document.getElementsByClassName("world")
 let starter = document.getElementsByClassName("starter")
 let patient = document.getElementById("patient")
 let handen = document.getElementById("handjes")
-const playerHand= document.getElementById("handD")
+const playerHand = document.getElementById("handD")
 const tweevingers = document.getElementById("2vinger")
 
-let stap= 1;
+let stap = 1;
 
 var audioD = new Audio('soundsD/soundD.mp3');
 for (let i = 0; i < play.length; i++) {
@@ -18,6 +18,10 @@ for (let i = 0; i < play.length; i++) {
     play[i].onmouseleave = (event) => {
         play[i].setAttribute("color", "grey");
     }
+    play[i].onclick = (event) => {
+        play[i].setAttribute("color", "yellow");
+        setInterval(() => {
+            window.location.replace("indexy.html")
+        }, 500);
+    }
 }
-
-

@@ -42,22 +42,3 @@ function countdown() {
         timeLeft--;
     }
 }
-
-
-//oppakken blokje
-object.onclick = (event) => {
-    object.setAttribute("spring", "target: #camera; damping: 100; stiffness: 100;");
-    text.setAttribute("value", "Plaats de tas op de rode bal")
-    plek.onclick = (event) => {
-        console.log("check")
-        object.setAttribute("visible", "false")
-        console.log(object)
-        object2.setAttribute("visible", "true")
-        text.setAttribute("value", "Start met de ademhaling controleren")
-    }
-}
-
-vloer.onclick = (event) => {
-    object.removeAttribute("spring")
-
-}
