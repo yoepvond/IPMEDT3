@@ -8,18 +8,25 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="js/main.js" defer></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
 
-    <title>Document</title>
+    <title>CPR Hoofdmenu</title>
 </head>
 
 <body>
-    <asset-item id="strand-obj" src="models/strand.obj"></asset-item>
-    <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
-    <asset-item id="palm-mtl" src="models/palmboom.mtl"></asset-item>
-    <asset-item id="palm-obj" src="models/palmboom.obj"></asset-item>
-    <img id="sky" src="models/sky.jpg"></img>
+    <div onclick>
+        <audio id="myaudio" controls autoplay>
+            <source src="soundsD/strand.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
     <a-scene>
+        <asset-item id="strand-obj" src="models/strand.obj"></asset-item>
+        <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
+        <asset-item id="palm-mtl" src="models/palmboom.mtl"></asset-item>
+        <asset-item id="palm-obj" src="models/palmboom.obj"></asset-item>
+        <img id="sky" src="models/sky.jpg"></img>
         <a-entity id="strand" obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
         <a-plane static-body id="vloer" position="0 0 0" rotation="-90 0 0 " scale="10 10 10 " color="#f5d376 "></a-plane>
         <a-entity obj-model="obj: #palm-obj; mtl: #palm-mtl" position="3 0 -5 " scale="0.8 0.8 0.8" rotation="0 180 0"></a-entity>

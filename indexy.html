@@ -12,11 +12,19 @@
     <script src="js/tascomponent.js"></script>
     <script src="js/hoofd.js" defer></script>
     <script src="js/main.js" defer></script>
-    <title>Strand</title>
+    <title>CPR Simulator</title>
 </head>
 
 
 <body>
+    <div onclick>
+        <audio id="myaudio" controls autoplay>
+            <source src="soundsD/strand.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="heartbeat" controls>
+            <source src="soundsD/heartbeat.mp3" type="audio/mpeg">
+        </audio>
+    </div>
     <a-scene physics="debug: true">
         <a-assets>
             <asset-item id="handjes-obj" src="models/handjes.obj"></asset-item>

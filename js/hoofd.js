@@ -13,11 +13,17 @@ let timer = document.getElementById("timer");
 var timeLeft = 360
 var timerId = setInterval(countdown, 1000);
 
+var audio = document.getElementById("myaudio");
+audio.volume = 0.2;
+
 function countdown() {
     if (timeLeft == -1) {
         clearTimeout(timerId)
         console.log("dood");
         timer.setAttribute("value", "Je hebt gefaald")
+        setInterval(() => {
+            window.location.replace("index.html")
+        }, 5000);
     } else if (timeLeft == 300) {
         hoofd.setAttribute("color", "grey")
         timeLeft--;

@@ -9,6 +9,9 @@ const tweevingers = document.getElementById("2vinger")
 
 let stap = 1;
 
+var audio = document.getElementById("myaudio");
+audio.volume = 0.2;
+
 var audioD = new Audio('soundsD/soundD.mp3');
 for (let i = 0; i < play.length; i++) {
     play[i].onmouseenter = (event) => {
@@ -22,7 +25,7 @@ for (let i = 0; i < play.length; i++) {
         play[i].setAttribute("color", "yellow");
         verder();
         setInterval(() => {
-            window.location.replace("indexy.html")
+            window.location.replace("index.html")
         }, 5000);
     }
 }

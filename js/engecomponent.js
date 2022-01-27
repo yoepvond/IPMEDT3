@@ -6,15 +6,18 @@ AFRAME.registerComponent('compressie', {
     init: function() {
 
         const timer = ms => new Promise(res => setTimeout(res, ms));
-        let starter = document.getElementsByClassName("starter")
-        let shocker = document.getElementsByClassName("aed")
-        let drukker = document.getElementsByClassName("drukken")
-        let ademhaling = document.getElementsByClassName("ademhaling")
-        let info = document.getElementById("startText")
-        let adem = document.getElementById("adem")
+        let starter = document.getElementsByClassName("starter");
+        let shocker = document.getElementsByClassName("aed");
+        let drukker = document.getElementsByClassName("drukken");
+        let ademhaling = document.getElementsByClassName("ademhaling");
+        let info = document.getElementById("startText");
+        let adem = document.getElementById("adem");
         const text = document.getElementById("text");
+        let audio = new Audio("soundsD/heartbeat.mp3");
 
         starter[0].onclick = async(event) => {
+            audio.play();
+            audio.volume = 0.3;
             if (stap == 1) {
                 text.setAttribute("value", "")
                 info.setAttribute("Value", "Check ademhaling")
@@ -34,7 +37,7 @@ AFRAME.registerComponent('compressie', {
                 console.log("patient");
                 await (shock());
                 console.log(stap)
-                let worked = Math.floor(Math.random() * 4);
+                let worked = Math.floor(Math.random() * 3);
                 if (worked == 0) {
                     console.log("ja")
                     starter[0].setAttribute("color", "green");
@@ -59,7 +62,7 @@ AFRAME.registerComponent('compressie', {
                 playerHand.setAttribute("visible", true);
                 el.setAttribute("visible", false)
                 console.log(stap)
-                let worked = Math.floor(Math.random() * 4)
+                let worked = Math.floor(Math.random() * 3)
                 if (worked == 0) {
                     console.log("ja")
                     starter[0].setAttribute("color", "green");
@@ -81,21 +84,26 @@ AFRAME.registerComponent('compressie', {
                 console.log("patient");
                 await (shock());
                 console.log(stap)
-                let worked = Math.floor(Math.random() * 2)
+                let worked = Math.floor(Math.random() * 1)
                 if (worked == 0) {
                     console.log("ja")
                     starter[0].setAttribute("color", "green");
                     ademhaling[0].setAttribute("visible", false);
                     info.setAttribute("Value", "GELUKT!");
                     stap++
-
-                } else {
-                    console.log("nee")
-                    starter[0].setAttribute("color", "red");
-                    ademhaling[0].setAttribute("visible", false);
-                    drukker[0].setAttribute("visible", true);
-                    stap--
+                    audio.play();
+                    audio.volume = 0.3;
+                    setInterval(() => {
+                        window.location.replace("indexy.html")
+                    }, 5000);
                 }
+
+            } else {
+                console.log("nee")
+                starter[0].setAttribute("color", "red");
+                ademhaling[0].setAttribute("visible", false);
+                drukker[0].setAttribute("visible", true);
+                stap--
             }
         }
 
