@@ -2,6 +2,10 @@ let camera = document.getElementById("cursor")
 let play= document.getElementsByClassName("play")
 let world= document.getElementsByClassName("world")
 let plays= document.getElementById("plays")
+const scherm= document.getElementById("scherm")
+const timer = ms => new Promise(res => setTimeout(res, ms));
+const klik= document.getElementById("klik")
+let bool= true;
 
 plays.onmouseenter = (event) => {
             console.log("hoi")
@@ -15,25 +19,29 @@ plays.onclick=(event)=>{
 
 }
 var audioD = new Audio('soundsD/soundD.mp3');
-for(let i = 0; i < play.length; i++){
-    play[i].onmouseenter = (event) => {
-        audioD.play();
-        play[i].setAttribute("color", "blue");        
-    }
-    play[i].onmouseleave = (event) => {
-        play[i].setAttribute("color", "grey");
-    }
-    play[i].onclick = (event) => {
-        play[i].setAttribute("color", "yellow");
+if(bool){
+    for(let i = 0; i < play.length; i++){
+        console.log(play[i])
+        play[i].onmouseenter = (event) => {
+            audioD.play();
+            play[i].setAttribute("color", "blue");        
+        }
+        play[i].onmouseleave = (event) => {
+            play[i].setAttribute("color", "grey");
+        }
+        play[i].onclick = async(event) => {
+            play[i].setAttribute("color", "yellow");
+            verder();
+        }
     }
 }
+ function verder(){
+        for(let i = 0; i < play.length;i++){
+            play[i].setAttribute("visible","false")
+        }
+        scherm.setAttribute("visible", "true")
+        klik.setAttribute("raycaster","far: 20; interval: 1000; objects: .picks, .places, .reset")
+        bool= false;
+        audioD.muted= true
+    }
 
-// const timer = ms => new Promise(res => setTimeout(res, ms));
-// async function start(){
-//     for (let i = 0; i < 10; i++) {
-//         await timer(1500);
-//         body[0].setAttribute("scale",{x:0.1,y:0.1,z:0.1});
-//         await timer(1500);
-//         body[0].setAttribute("scale",{x:0.10,y:0.10,z:0.11});
-//     }
-// }
