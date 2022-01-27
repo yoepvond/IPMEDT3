@@ -20,8 +20,19 @@ for (let i = 0; i < play.length; i++) {
     }
     play[i].onclick = (event) => {
         play[i].setAttribute("color", "yellow");
+        verder();
         setInterval(() => {
             window.location.replace("indexy.html")
-        }, 500);
+        }, 5000);
     }
+}
+
+function verder() {
+    for (let i = 0; i < play.length; i++) {
+        play[i].setAttribute("visible", "false")
+    }
+    scherm.setAttribute("visible", "true")
+    klik.setAttribute("raycaster", "far: 20; interval: 1000; objects: .picks, .places, .reset")
+    bool = false;
+    audioD.muted = true
 }
