@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="js/engecomponent.js"></script>
+    <script src="js/hoofdkleur.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <title>Strandje</title>
+</head>
+
+<body>
+    <a-scene physics="debug: false">
+        <a-assets>
+            <asset-item id="handjes-obj" src="models/handjes.obj"></asset-item>
+            <asset-item id="handjes-mtl" src="models/handjes.mtl"></asset-item>
+            <asset-item id="strand-obj" src="models/strand.obj"></asset-item>
+            <asset-item id="strand-mtl" src="models/strand.mtl"></asset-item>
+            <asset-item id="vent-obj" src="models/vent.obj"></asset-item>
+            <asset-item id="vent-mtl" src="models/vent.mtl"></asset-item>
+            <asset-item id="romp-obj" src="models/romp.obj"></asset-item>
+            <asset-item id="romp-mtl" src="models/romp.mtl"></asset-item>
+            <asset-item id="drukhand-obj" src="models/handjesdruk.obj"></asset-item>
+            <asset-item id="drukhand-mtl" src="models/handjesdruk.mtl"></asset-item>
+            <asset-item id="aed-obj" src="models/aed.obj"></asset-item>
+            <asset-item id="aed-mtl" src="models/AED.mtl"></asset-item>
+            <asset-item id="tweevinger-obj" src="models/wijshandje.obj"></asset-item>
+            <asset-item id="hoofd-obj" src="models/hoofdje.obj"></asset-item>
+            <asset-item id="palm-mtl" src="models/palmboom.mtl"></asset-item>
+            <asset-item id="palm-obj" src="models/palmboom.obj"></asset-item>
+            <asset-item id="tas-obj" src="models/paramedic_bag_red.obj"></asset-item>
+            <img id="sky" src="models/sky.jpg"></img>
+        </a-assets>
+
+        <a-camera static-body id="camera">
+            <a-cursor class="js--cursor" color="black">
+                <a-entity static-body="shape:none" id="handD" obj-model="obj: #handjes-obj; mtl: #strand-mtl" position="0 -0.9 0 " scale="0.25 0.25 0.25 rotation=" -2 90 0></a-entity>
+            </a-cursor>
+            <a-entity animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1" animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1000; from: 1 1 1; to: 0.1 0.1 0.1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                cursor="fuse: true;" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat" raycaster="far: 20; interval: 1000; objects: .picks, .places, .reset, .play, .starter, .tassie">
+            </a-entity>
+            <a-text position="-0.5 0.2 -0.3" value="-Find the bag" color="black" scale="0.1 0.1 0.1"></a-text>
+        </a-camera>
+        <a-entity id="strand" obj-model="obj: #strand-obj; mtl: #strand-mtl" position="0 -0.1 0 " scale="0.8 0.8 0.8" rotation="-2 90 0"></a-entity>
+        <a-sphere compressie="start" id="character" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="green" opacity="0.5">
+            <a-entity id="handjes" obj-model="obj: #drukhand-obj" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
+            <a-entity id="aed" obj-model="obj: #aed-obj; mtl: #aed-mtl" position="6.3 -3.5 -1.5" scale="3 3 3" rotation="0 20 0" visible="true"></a-entity>
+            <a-entity obj-model="obj: #vent-obj; mtl: #vent-mtl" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0">
+                <a-entity id="patient" obj-model="obj: #romp-obj; mtl: #romp-mtl" position="-0.2 0.05 4" rotation=" -85 0 0"></a-entity>
+            </a-entity>
+            <a-obj-model hoofdkleur="6min" id="hoofd" src="#hoofd-obj" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0" color="#FFC3A0" opacity="0.2"></a-obj-model>
+        </a-sphere>
+
+        <a-plane static-body id="vloer" position="0 0 0" rotation="-90 0 0 " scale="10 10 10 " color="#f5d376 "></a-plane>
+        <a-obj-model dynamic-body id="object" class="tassie" src="#tas-obj" position="1  1" rotation=" 0 0 0" scale="0.01 0.01 0.01" color="darkred"></a-obj-model>
+
+        <a-ocean width="200 " depth="200 " density="40 " opacity="1 " position="0 -0.7 0 "></a-ocean>
+        <a-sky src="#sky" position="0 100 0 "></a-sky>
+
+        <a-entity id="2vinger" obj-model="obj: #tweevinger-obj; mtl: #strand-mtl" position="-3 0.3 0.4 " scale="0.1 0.1 0.1" rotation="0 90 75" visible="false"></a-entity>
+
+
+
+
+    </a-scene>
+</body>
+
+</html>
