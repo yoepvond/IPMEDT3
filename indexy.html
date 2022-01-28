@@ -62,13 +62,13 @@
         <a-sphere id="place" class="plekk" color="red" radius="0.2" position="-1.5 0 -1" visible="true">
             <a-obj-model id="object2" class="tassie" src="#tas-obj" scale="0.01 0.01 0.01" color="darkred" visible="false"></a-obj-model>
         </a-sphere>
-        <a-sphere compressie="start" id="character" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="black" opacity="0.5">
-            <a-text id="startText" value="Het slachtoffer" position="2 1.5 2" rotation="0 120 0" scale="3 3 3" color="black"></a-text>
+        <a-sphere compressie="start" id="character" class="starter" position="-3 1 0.5" scale="0.2 0.2 0.2" color="black" opacity="0">
+            <a-text id="startText" value="Het slachtoffer" position="2 1.5 2" rotation="0 90 0" scale="3 3 3" color="black"></a-text>
             <a-entity id="handjes" obj-model="obj: #drukhand-obj" position="1 -2.5 1.5" scale="0.7 0.7 0.7" rotation="0 90 0" visible="false"></a-entity>
             <a-entity id="aed" obj-model="obj: #aed-obj; mtl: #aed-mtl" position="6.3 -3.5 -1.5" scale="3 3 3" rotation="0 20 0" visible="false"></a-entity>
             <a-entity id="adem" obj-model="obj: #adem-obj; mtl: #adem-mtl" position="1 -4 0.5" scale="3 3 3" rotation="0 20 0" visible="false"></a-entity>
             <a-entity obj-model="obj: #vent-obj; mtl: #vent-mtl" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0">
-                <a-entity id="patient" obj-model="obj: #romp-obj; mtl: #romp-mtl" position="-0.2 0.05 4" rotation=" -85 0 0"></a-entity>
+                <a-entity id="patient" class="starter" obj-model="obj: #romp-obj; mtl: #romp-mtl" position="-0.2 0.05 4" rotation=" -85 0 0"></a-entity>
             </a-entity>
             <a-obj-model hoofdkleur="6min" id="hoofd" src="#hoofd-obj" position="1.5 -4 0" scale="3 3 3" rotation="0 30 0" color="#FFC3A0" opacity="0.2"></a-obj-model>
         </a-sphere>

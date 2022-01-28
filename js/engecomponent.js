@@ -94,7 +94,7 @@ AFRAME.registerComponent('compressie', {
                     audio.play();
                     audio.volume = 0.3;
                     setInterval(() => {
-                        window.location.replace("indexy.html")
+                        window.location.replace("index.html")
                     }, 5000);
                 }
 

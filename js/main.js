@@ -25,7 +25,7 @@ for (let i = 0; i < play.length; i++) {
         play[i].setAttribute("color", "yellow");
         verder();
         setInterval(() => {
-            window.location.replace("index.html")
+            window.location.replace("indexy.html")
         }, 5000);
     }
 }
